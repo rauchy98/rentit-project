@@ -16,4 +16,4 @@ Angular 4.4.1 + ASP.NET
 
 ## How to run application
 
-In front-end folder (wwwroot) write `npm i` for download packages and `npm start` for run app.
+In front-end folder (wwwroot) write `npm i` for download packages and `npm start` for run app. Navigate to `http://localhost:4200/`.
