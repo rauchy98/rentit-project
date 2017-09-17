@@ -12,7 +12,11 @@ Basic concept of the project:
 
 ## Technologies
 
-Angular 4.4.1 + ASP.NET
+Angular 4.4.1 + Bootstrap 4 Alpha + ASP.NET.
+
+## Screenshots
+
+Project screenshots is available on `Wiki`.
 
 ## How to run application
 
