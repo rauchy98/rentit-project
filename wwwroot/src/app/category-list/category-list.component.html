@@ -1,0 +1,11 @@
+<h2 class="display-5 my-2">Categories</h2>
+<div *ngFor="let category of categories">
+    <ul class="list-group">
+        <a class="list-group-item title-category my-1" data-toggle="collapse" aria-expanded="true" href="#collapse{{category.id}}" [routerLink]="['/category', category.id]">{{category.title}}</a>
+    </ul>
+    <div [ngClass]="{show: checkSelected(category)}" id="collapse{{category.id}}" class="panel-collapse collapse">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let subcategory of category.subcategories" [routerLink]="['/category', subcategory.id]" (click)="categorySelect(subcategory)">{{subcategory.title}}</li>
+        </ul>
+    </div>
+</div>

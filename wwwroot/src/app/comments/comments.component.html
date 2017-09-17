@@ -1,0 +1,13 @@
+<form (ngSubmit)="formSubmited()" class="mb-3">
+    <div class="form-group">
+        <label for="exampleTextarea">Write your opinion about this product</label>
+        <textarea class="form-control" id="exampleTextarea" rows="3" name="text" [(ngModel)]="comment.text"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
+<hr />
+<div *ngFor="let item of comments" class="comment">
+    <h5>{{item.user.name}} </h5>
+    <p class="lead">{{item.text}}</p>
+    <hr />
+</div>

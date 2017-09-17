@@ -1,0 +1,58 @@
+.div-card-img {
+	width: 100%;
+	height: 20rem;
+	overflow: hidden;
+}
+
+.display-5 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+@media (max-width: 768px) {
+.card {
+  width: 22rem;
+}	
+}
+
+.card {
+  width: 28rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.card:hover {
+  border-color: rgba(2, 117, 216, 0.7);
+}
+
+.card:focus{
+  -webkit-box-shadow: 0 0 0 1px rgba(2, 117, 216, 0.5);
+  box-shadow: 0 0 0 1px rgba(2, 117, 216, 0.5);
+}
+
+.card-title:hover {
+	text-decoration: underline;
+}
+
+
+.div-card-img {
+	overflow: hidden;
+  text-align: center;
+}
+
+
+.card-img-top {
+  width: 100%;
+	height: 15rem;
+  object-fit: contain;
+    vertical-align: middle;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}

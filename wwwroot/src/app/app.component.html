@@ -1,0 +1,54 @@
+<div class="wrapper">
+    <div class="content">
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+            <a class="navbar-brand" href="#">RENT IT</a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="mr-auto">
+                    <search *ngIf="condition"></search>
+                </div>
+                <button class="btn btn-outline-success mx-2" type="submit" routerLink="/add-product">Add product</button>
+                <ul class="navbar-nav">
+                    <li *ngIf="isLogin" class="nav-item"> <a class="nav-link" routerLink="/signin">Sign in</a> </li>
+                    <li *ngIf="isLogin" class="nav-item"> <a class="nav-link" routerLink="/register">Register</a> </li>
+                    <li *ngIf="!isLogin" class="nav-item"> <a class="nav-link" routerLink="/signin" (click)="logout()">Logout</a> </li>
+                </ul>
+                <a class="navbar-brand ml-1" routerLink="/orders">
+                    <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDE5LjI1IDE5LjI1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxOS4yNSAxOS4yNTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPGcgaWQ9IkxheWVyXzFfMTA3XyI+CgkJPGc+CgkJCTxwYXRoIGQ9Ik0xOS4wMDYsMi45N2MtMC4xOTEtMC4yMTktMC40NjYtMC4zNDUtMC43NTYtMC4zNDVINC40MzFMNC4yMzYsMS40NjEgICAgIEM0LjE1NiwwLjk3OSwzLjczOSwwLjYyNSwzLjI1LDAuNjI1SDFjLTAuNTUzLDAtMSwwLjQ0Ny0xLDFzMC40NDcsMSwxLDFoMS40MDNsMS44NiwxMS4xNjRjMC4wMDgsMC4wNDUsMC4wMzEsMC4wODIsMC4wNDUsMC4xMjQgICAgIGMwLjAxNiwwLjA1MywwLjAyOSwwLjEwMywwLjA1NCwwLjE1MWMwLjAzMiwwLjA2NiwwLjA3NSwwLjEyMiwwLjEyLDAuMTc5YzAuMDMxLDAuMDM5LDAuMDU5LDAuMDc4LDAuMDk1LDAuMTEyICAgICBjMC4wNTgsMC4wNTQsMC4xMjUsMC4wOTIsMC4xOTMsMC4xM2MwLjAzOCwwLjAyMSwwLjA3MSwwLjA0OSwwLjExMiwwLjA2NWMwLjExNiwwLjA0NywwLjIzOCwwLjA3NSwwLjM2NywwLjA3NSAgICAgYzAuMDAxLDAsMTEuMDAxLDAsMTEuMDAxLDBjMC41NTMsMCwxLTAuNDQ3LDEtMXMtMC40NDctMS0xLTFINi4wOTdsLTAuMTY2LTFIMTcuMjVjMC40OTgsMCwwLjkyLTAuMzY2LDAuOTktMC44NThsMS03ICAgICBDMTkuMjgxLDMuNDc5LDE5LjE5NSwzLjE4OCwxOS4wMDYsMi45N3ogTTE3LjA5Nyw0LjYyNWwtMC4yODUsMkgxMy4yNXYtMkgxNy4wOTd6IE0xMi4yNSw0LjYyNXYyaC0zdi0ySDEyLjI1eiBNMTIuMjUsNy42MjV2MiAgICAgaC0zdi0ySDEyLjI1eiBNOC4yNSw0LjYyNXYyaC0zYy0wLjA1MywwLTAuMTAxLDAuMDE1LTAuMTQ4LDAuMDNsLTAuMzM4LTIuMDNIOC4yNXogTTUuMjY0LDcuNjI1SDguMjV2Mkg1LjU5N0w1LjI2NCw3LjYyNXogICAgICBNMTMuMjUsOS42MjV2LTJoMy40MThsLTAuMjg1LDJIMTMuMjV6IiBmaWxsPSIjYjViNWI1Ii8+CgkJCTxjaXJjbGUgY3g9IjYuNzUiIGN5PSIxNy4xMjUiIHI9IjEuNSIgZmlsbD0iI2I1YjViNSIvPgoJCQk8Y2lyY2xlIGN4PSIxNS43NSIgY3k9IjE3LjEyNSIgcj0iMS41IiBmaWxsPSIjYjViNWI1Ii8+CgkJPC9nPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo="
+                        width="30" height="30" class="d-inline-block align-top" alt="">
+                </a>
+            </div>
+        </nav>
+        <router-outlet></router-outlet>
+    </div>
+
+    <footer class="footer d-flex justify-content-center">
+        <span class="lead text-center align-middle">Rent your <a class="dream mb-3" href="#" data-toggle="modal" data-target="#aboutModal">dream</a></span>
+
+        <!-- Modal -->
+        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Hello!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h1 class="display-3 text-center">RENT IT</h1><br> We can help You make all your dreams! With our service You will be able to try something that You like so long.<br> Now You do not have to buy a thing in order to enjoy it, because You can take it on rent and get
+                        the same pleasure, while saving your money.<br> And yes, this text translated into Google Translate :)
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <simple-notifications [options]="options"></simple-notifications>
+</div>

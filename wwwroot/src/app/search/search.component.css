@@ -1,0 +1,70 @@
+@media (min-width: 768px) {
+  .form-control {
+    width: 25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-inline {
+    display: flex;
+    justify-content: center;
+  }
+
+
+}
+
+.btn-outline-success {
+  color: #0275d8;
+  border-color: #0275d8;
+}
+
+.btn-outline-success:hover {
+  color: #fff;
+  background-color: #0275d8;
+  border-color: #0275d8;
+}
+
+.btn-outline-success.disabled, .btn-outline-success:disabled {
+  color: #0275d8;
+  background-color: transparent;
+}
+
+.btn-outline-success:focus, .btn-outline-success.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.5);
+  box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.5);
+}
+
+.btn-outline-success:active, .btn-outline-success.active,
+.show > .btn-outline-success.dropdown-toggle {
+  color: #fff;
+  background-color: #0275d8;
+  border-color: #0275d8;
+}
+
+
+ .dropdown-menu p{
+    padding: 3px 1.5rem;
+ }
+
+.dropdown .dropdown-menu {
+   width: 100%;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.price {
+  margin: auto 0;
+  border-radius: 0.25rem;
+  padding:0.2rem;
+  padding-bottom: 0.35rem;
+  display: inline-block;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  /*font-weight: bold;*/
+  color: #0275d8;
+  border: 1px solid #0275d8;
+}

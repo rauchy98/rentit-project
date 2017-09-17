@@ -1,0 +1,15 @@
+<div class="d-flex flex-wrap justify-content-center py-2 align-items-start align-self-start">
+    <div *ngFor="let item of products" class="card" [routerLink]="['/product', item.id]">
+        <div class="div-card-img">
+            <span class="helper"></span> <img class="card-img-top" src="{{	item.picture[0] }}" alt="Card image cap">
+        </div>
+        <div class="card-block">
+            <h4 class="card-title">{{item.title}}</h4>
+            <span *ngIf="item.available == AvailableStatus.Available" class="price h4 mr-1">${{item.price}} / day</span>
+            <button type="button" *ngIf="item.available === AvailableStatus.Available" class="btn btn-primary">Rent Item</button>
+            <div *ngIf="item.available === AvailableStatus.NotAvailable" class="btn btn-secondary disabled">Checks: {{item.requestCount}}</div>
+            <button type="button" *ngIf="item.available === AvailableStatus.NotAvailable" class="btn btn-primary check">See more</button>
+            <button type="button" *ngIf="item.available === AvailableStatus.WaitForAvailable" class="btn btn-info disabled">Wait for avalible</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container my-5">
+    <div class="row my-4">
+        <div class="col-lg-12 d-flex justify-content-center">
+            <span class="display-4 mb-4">My orders</span>
+        </div>
+        <div class="col-lg-12 d-flex justify-content-center">
+            <span class="display-5">Unconfirmed orders</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center flex-wrap">
+            <div class="card mb-3" *ngFor="let order of orders let i = index" [routerLink]="['/product', order.product.id]">
+                <div class="div-card-img">
+                    <span class="helper"></span><img class="card-img-top" src="{{order.product.picture[0]}}" alt="Card image cap">
+                </div>
+                <div class="card-block">
+                    <h4 class="card-title">{{order.product.title}}</h4>
+                    <p class="card-text">You want rent <strong>{{order.amount}}</strong> item(s)<br> From <strong>{{order.start | date: 'dd/MM/yyyy'}}</strong> to <strong>{{order.end | date: 'dd/MM/yyyy'}}</strong></p>
+                    <a href="#" class="btn btn-primary">Confirm this order</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary btn-lg">Confirm all orders</button>
+        </div>
+    </div>
+</div>

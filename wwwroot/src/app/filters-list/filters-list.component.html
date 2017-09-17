@@ -1,0 +1,17 @@
+<h2 class="display-5 my-2">Filters</h2>
+<hr style="margin:0.5rem 0.0rem">
+<div *ngFor="let filter of filters">
+    <h6>{{filter.name}}</h6>
+
+    <div *ngFor="let value of filter.values">
+        <div>
+            <label class="" class="form-check-label">
+            <input name="{{value}}" type="checkbox" (change)="itemChecked($event,filter.id,value)">
+            {{value}}
+        </label>
+
+        </div>
+    </div>
+    <hr style="margin:0.5rem 0.0rem">
+</div>
+<button type="submit" class="btn btn-primary">Apply Filters ({{products.length}})</button>

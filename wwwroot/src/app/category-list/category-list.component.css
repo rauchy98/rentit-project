@@ -1,0 +1,11 @@
+.list-group-item {
+      cursor: pointer;
+}
+.list-group-item:hover {
+text-decoration: underline;
+}
+
+.title-category {
+      background-color: #f7f7f7;
+      color: black;
+}

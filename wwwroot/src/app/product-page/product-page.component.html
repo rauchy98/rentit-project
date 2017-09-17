@@ -1,0 +1,59 @@
+<div *ngIf="product" class="container-fluid">
+    <div class="my-3 mx-4">
+        <div class="row">
+            <div class="col-md-5 col-lg-5">
+                <h1>{{product.title}}</h1>
+            </div>
+            <div class="col-md-7 col-lg-7">
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-md-5 col-lg-5">
+                <div class="d-flex justify-content-center">
+                    <img src="{{product.picture[0]}}" class="" alt="Responsive image" style="height: 20rem; max-width: 100%;"></div>
+
+                <div class="row row-min-ph d-flex justify-content-center align-items-center align-self-center">
+                    <div *ngFor="let pic of product.picture">
+                        <a href="{{pic}}" data-lightbox="image-1">
+                            <img src="{{pic}}" class="img-fluid min-ph" alt="Responsive image"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 col-lg-7">
+                <div class="jumbotron">
+                    <div class="buy mb-3">
+                        <span *ngIf="product.available == AvailableStatus.Available" class="price h4 mr-1">${{product.price}} / day</span>
+                        <button type="button" *ngIf="product.available === AvailableStatus.Available" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Rent Item</button>
+                        <button type="button" *ngIf="product.available === AvailableStatus.NotAvailable" class="btn btn-secondary btn-lg disabled">No avalible</button>
+                        <button type="button" *ngIf="product.available === AvailableStatus.NotAvailable" class="btn btn-primary btn-lg check" [class.disabled]="isChecked" (click)="check()">Check</button>
+                        <button type="button" *ngIf="product.available === AvailableStatus.WaitForAvailable" class="btn btn-info btn-lg disabled">Wait for avalible</button>
+                        <pickorderdate [productId]="product.id"></pickorderdate>
+                    </div>
+                    <h4>Owner: <strong>{{owner.name}}</strong></h4>
+                    <h4>Checks: <strong>{{product.requestCount}}</strong></h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7 col-lg-7">
+                <h2 class="display-5 comments-title">Description</h2>
+                <p class="lead">
+                    {{product.description}}
+                </p>
+                <h2 class="display-5 comments-title my-2">Characteristics</h2>
+                <table class="table my-3">
+                    <tbody>
+                        <tr *ngFor="let characteristic of characteristics">
+                            <th scope="row">{{characteristic.name}}</th>
+                            <td>{{characteristic.value}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-5 col-lg-5">
+                <h2 class="display-5 comments-title">Comments</h2>
+                <comments [productId]="product.id"></comments>
+            </div>
+        </div>
+    </div>
+</div>

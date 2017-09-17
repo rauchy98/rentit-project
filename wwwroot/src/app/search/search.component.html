@@ -1,0 +1,28 @@
+<form class="form-inline my-2 my-lg-0">
+    <input debounce [delay]="300" (func)="onChange()" name="search" autocomplete="off" class="form-control form-control-lg mr-sm-2" [class.form-control-lg]="!condition" type="text" placeholder="Enter product" [(ngModel)]="query">
+    <button class="btn btn-outline-success my-2 my-sm-0" [class.btn-lg]="!condition" type="submit" [routerLink]="['/search', {q:query}]">Search</button>
+</form>
+<div class="dropdown" [ngClass]="{ 'show': (categories.length ||  products.length) || noResults}">
+    <div class="dropdown-menu" role="menu">
+        <p *ngIf="noResults">No matches found</p>
+        <form class="form-horizontal" role="form">
+            <div *ngFor="let product of products" class="dropdown-item" [routerLink]="['/product', product.id]" (click)="clearInput()">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 d-flex justify-content-center">
+                        <img src="{{product.picture[0]}}" style="height: 4rem; background-size: cover;">
+                    </div>
+                    <p class="col-md-6 col-lg-6 d-flex align-items-center">{{product.title}}</p>
+
+                    <div *ngIf="product.available == AvailableStatus.Available" class="price col-md-3 col-sm-3">${{product.price}} / day</div>
+                    <div *ngIf="product.available == AvailableStatus.NotAvailable" class="price col-md-3 col-sm-3">No avalible</div>
+                    <div *ngIf="product.available == AvailableStatus.WaitForAvailable" class="price col-md-3 col-sm-3">Wait for avalible</div>
+                </div>
+            </div>
+            <div class="row">
+                <div *ngFor="let category of categories" class="dropdown-item d-flex align-items-center" [routerLink]="['/category', category.id]" (click)="clearInput()">
+                    <p>Category <strong>{{category.title}}</strong></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
